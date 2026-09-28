@@ -34,9 +34,9 @@ Sound
 
 For an ideal string:
 
-$$
-`f_n = \frac{n}{2L}\sqrt{\frac{T}{\mu}}`
-$$
+`$$
+f_n = \frac{n}{2L}\sqrt{\frac{T}{\mu}}
+$$`
 
 Where **length**, **tension**, and **mass density** determine the frequency of vibration.
 
