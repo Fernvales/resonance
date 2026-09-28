@@ -1,4 +1,4 @@
-#### ◌ Resonance
+#### Resonance
 
 > **Where music becomes mathematics.**
 
@@ -20,7 +20,7 @@ Frequency
 Sound
 ```
 
-#### ∿ Exploring
+#### Exploring
 
 * Vibrating strings
 * Wave equations
@@ -30,7 +30,7 @@ Sound
 * Waveforms & frequency spectra
 * Computational sound
 
-#### △ The Physics
+#### The Physics
 
 For an ideal string:
 
@@ -42,13 +42,13 @@ Where **length**, **tension**, and **mass density** determine the frequency of v
 
 The project turns these relationships into actual simulations rather than treating them as equations on a page.
 
-#### ⚙️ Built With
+#### Built With
 
 `Python` · `NumPy` · `Matplotlib` · `SciPy`
 
 **Planned:** `TypeScript` · `React` · `Web Audio API`
 
-#### ◇ Progress
+#### Progress
 
 * [x] Represent a string mathematically
 * [x] Create a plucked-string model
@@ -58,7 +58,3 @@ The project turns these relationships into actual simulations rather than treati
 * [ ] Build interactive visualization
 
 ---
-
-> **What happens between a vibration and a sound?**
->
-> Resonance is an attempt to find out.
