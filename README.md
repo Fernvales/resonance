@@ -1,9 +1,9 @@
 #### Resonance
 
 
-Resonance is an experimental project exploring the intersection of **music, physics, mathematics, and computer science**.
+> Resonance is an experimental project exploring the intersection of music, physics, mathematics, and computer science.
 
-The goal is to model how a physical vibration becomes the sound we hear — starting with a simple vibrating string.
+> The goal is to model how a physical vibration becomes the sound we hear, starting with a simple vibrating string.
 
 
 #### Exploring
@@ -22,10 +22,10 @@ $$ f_n = \frac{n}{2L}\sqrt{\frac{T}{\mu}} $$
 
 where:
 
-L = string length
-T = tension
-μ = linear density
-n = harmonic number
+L = string length <br>
+T = tension <br>
+μ = linear density <br>
+n = harmonic number <br>
 
 The project turns these relationships into actual simulations rather than treating them as equations on a page.
 
@@ -60,18 +60,4 @@ This allows physical parameters such as tension and linear density to directly a
 #### Planned:
 
 `SciPy` · `TypeScript` · `React` · `Web Audio API`
-
-#### Releases
-v0.3.0 — The String Begins to Move
-
-The first animated simulation of a vibrating string.
-
-This release introduces numerical time evolution and visualization of the string's motion.
-
-#### The Question
-
-What happens between a vibration and a sound?
-
-Resonance is an attempt to find out.
-
 
