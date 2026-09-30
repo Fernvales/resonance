@@ -4,6 +4,8 @@
 
 Resonance models how a physical vibration becomes the sound we hear, starting with a single vibrating string.
 
+![Vibrating string simulation](./assets/string.gif)
+
 
 ## What it does
 
