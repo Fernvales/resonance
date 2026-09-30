@@ -32,6 +32,8 @@ The string is a set of discrete points evolved through time. Stability requires 
 
 Default string: `c = 200 m/s`, `L = 1 m`, so the theoretical fundamental is 100 Hz.
 
+<p align="center"> <img src="./assets/spectrum.png" alt="Pickup signal and frequency spectrum with theoretical harmonics" width="100%"> </p>
+
 | Grid points | Courant number | Error at f₁ | Error at f₈ |
 |---|---|---|---|
 | 101 | 0.9 | −0.001 Hz | −0.40 Hz |
