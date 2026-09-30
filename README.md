@@ -1,77 +1,72 @@
-#### Resonance
+# Resonance
+
+> A computational exploration of vibration, sound, and resonance.
+
+Resonance models how a physical vibration becomes the sound we hear, starting with a single vibrating string.
 
 
-Resonance is an experimental project exploring the intersection of **music, physics, mathematics, and computer science**.
+## What it does
 
-The goal is to model how a physical vibration becomes the sound we hear — starting with a simple vibrating string.
+1. Simulates a plucked string by solving the 1D wave equation numerically
+2. Records the string's motion at a "pickup" point
+3. Uses Fourier analysis to measure each harmonic and compares it to theory
+4. Turns the motion into a playable `.wav` file
 
+## The physics
 
-#### Exploring
-> Vibrating strings
-> <br>Wave equations
-> <br>Harmonics & resonance
-> <br>Numerical simulation
-> <br>Fourier analysis
-> <br>Waveforms & frequency spectra
-> <br>Computational sound
-#### The Physics
-
-For an ideal string, the frequency of its nth harmonic is
+For an ideal string fixed at both ends, the frequency of the nth harmonic is
 
 $$ f_n = \frac{n}{2L}\sqrt{\frac{T}{\mu}} $$
 
-where:
+where `L` is string length, `T` is tension, `μ` is linear density, and `n` is the harmonic number.
 
-L = string length
-T = tension
-μ = linear density
-n = harmonic number
+The simulation solves the damped 1D wave equation with a finite-difference scheme:
 
-The project turns these relationships into actual simulations rather than treating them as equations on a page.
+$$ \frac{\partial^2 u}{\partial t^2} = c^2 \frac{\partial^2 u}{\partial x^2} - 2\gamma \frac{\partial u}{\partial t}, \qquad c = \sqrt{\frac{T}{\mu}} $$
 
-#### Current Progress
-> Represent a string mathematically
-> <br>Create a plucked-string model
-> <br>Simulate vibration
-> <br>Animate string motion
-> <br>Measure oscillation frequency
-> <br>Analyze harmonics
-> <br>Perform Fourier analysis
-> <br>Generate sound
-> <br>Build interactive visualization
-#### Current Model
+The string is a set of discrete points evolved through time. Stability requires the Courant number `c·Δt/Δx ≤ 1`, and the code enforces this.
 
-The current simulation uses a finite-difference approximation of the one-dimensional wave equation:
+## Results
 
-$$ \frac{\partial^2u}{\partial t^2} = c^2 \frac{\partial^2u}{\partial x^2} $$
+Default string: `c = 200 m/s`, `L = 1 m`, so the theoretical fundamental is 100 Hz.
 
-The string is represented as a discrete set of points and evolved through time numerically.
+| Grid points | Courant number | Error at f₁ | Error at f₈ |
+|---|---|---|---|
+| 101 | 0.9 | −0.001 Hz | −0.40 Hz |
+| 101 | 1.0 | 0.000 Hz | 0.000 Hz |
+| 41 | 0.9 | −0.005 Hz | −2.58 Hz |
+| 41 | 1.0 | 0.000 Hz | 0.000 Hz |
 
-The wave speed is determined by:
+**Numerical dispersion:** on a coarse grid, short wavelengths travel slightly slower than the ideal wave equation predicts, so high harmonics come out flat. The error shrinks with more grid points, and at Courant = 1 the scheme is exact for the undamped 1D wave equation.
 
-$$ c = \sqrt{\frac{T}{\mu}} $$
+## Progress
 
-This allows physical parameters such as tension and linear density to directly affect the behavior of the simulated string.
+- [x] Represent a string mathematically
+- [x] Plucked-string model
+- [x] Simulate and animate vibration
+- [x] Measure oscillation frequency
+- [x] Fourier analysis (windowed, zero-padded, interpolated peaks)
+- [x] Analyze harmonics
+- [x] Damping
+- [x] Generate sound (WAV export)
+- [ ] Frequency-dependent damping
+- [ ] Interactive visualization (web)
 
-#### Built With
+## Run it
 
-`Python` · `NumPy` · `Matplotlib`
+```bash
+pip install -r requirements.txt
+python resonance.py
+```
 
-#### Planned:
+This prints a table of theoretical vs. measured harmonics, writes `resonance.wav`, and opens the animation and spectrum plots.
 
-`SciPy` · `TypeScript` · `React` · `Web Audio API`
+## Built with
 
-#### Releases
-v0.3.0 — The String Begins to Move
+`Python` · `NumPy` · `SciPy` · `Matplotlib`
 
-The first animated simulation of a vibrating string.
+Planned: `TypeScript` · `React` · `Web Audio API`
 
-This release introduces numerical time evolution and visualization of the string's motion.
+## License
 
-#### The Question
-
-What happens between a vibration and a sound?
-
-Resonance is an attempt to find out.
-
-
+MIT
