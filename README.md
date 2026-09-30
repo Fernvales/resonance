@@ -4,7 +4,7 @@
 
 Resonance models how a physical vibration becomes the sound we hear, starting with a single vibrating string.
 
-<p align="center"> <img src="./assets/string.gif" alt="Simulated plucked string vibrating" width="100%"> </p>
+![Vibrating string simulation](./assets/string.gif)
 
 
 ## What it does
